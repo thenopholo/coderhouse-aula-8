@@ -1,20 +1,23 @@
-function novoUsuario(nome, sobrenome, email, telefone, senha) {
-    this.nome = nome;
-    this.sobrenome = sobrenome;
-    this.email = email;
-    this.telefone = telefone;
-    this.senha = senha;
+class Usuario {
+    constructor(nome, sobrenome, email, telefone, senha) {
+        this.nome = nome
+        this.sobrenome = sobrenome
+        this.email = email
+        this.telefone = telefone
+        this.senha = senha
+    }
 
-    this.confirmaDados = function(){
+    exibeDados() {
         alert(
-        "Seus dados são:\n" +
-        "Nome: " + this.nome + "\n" +
-        "Sobrenome: " + this.sobrenome + "\n" +
-        "Email: " + this.email + "\n" +
-        "Telefone: " + this.telefone + "\n" +
-        "Senha: " + this.senha
+            "Seus dados são:\n" +
+            "Nome: " + this.nome + "\n" +
+            "Sobrenome: " + this.sobrenome + "\n" +
+            "Email: " + this.email + "\n" +
+            "Telefone: " + this.telefone + "\n" +
+            "Senha: " + this.senha
         );
-    };
+    }
+
 }
 
 document.querySelector('.form').addEventListener('submit', function (event) {
@@ -25,8 +28,8 @@ document.querySelector('.form').addEventListener('submit', function (event) {
     let telefone = document.getElementById("telefoneInput").value;
     let senha = document.getElementById("senhaInput").value;
 
-    let usuario = new novoUsuario(nome, sobrenome, email, telefone, senha);
+    let usuario = new Usuario(nome, sobrenome, email, telefone, senha);
 
     console.log(usuario); // Isso imprimirá o objeto usuário no console
-    usuario.confirmaDados(); // Isso imprimirá os dados do usuário em um alerta
+    usuario.exibeDados(); // Isso imprimirá os dados do usuário em um alerta
 });
