@@ -1,24 +1,5 @@
-class Usuario {
-    constructor(nome, sobrenome, email, telefone, senha) {
-        this.nome = nome
-        this.sobrenome = sobrenome
-        this.email = email
-        this.telefone = telefone
-        this.senha = senha
-    }
+import { Usuario } from "./model/Usuario.js";
 
-    exibeDados() {
-        alert(
-            "Seus dados são:\n" +
-            "Nome: " + this.nome + "\n" +
-            "Sobrenome: " + this.sobrenome + "\n" +
-            "Email: " + this.email + "\n" +
-            "Telefone: " + this.telefone + "\n" +
-            "Senha: " + this.senha
-        );
-    }
-
-}
 
 document.querySelector('.form').addEventListener('submit', function (event) {
 
